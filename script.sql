@@ -110,6 +110,8 @@ WITH
             AND c.project_id = 3
             AND c2.id IS NULL
     )
+SELECT * FROM update_list;
+UPDATE dwh.yc_natural_persons SET contact_id = ul.contact_id FROM update_list ul WHERE yc_natural_persons.external_id = ul.external_id;
 
 /*
  *****Step 3**********************************************************************************************************
